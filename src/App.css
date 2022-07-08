@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,23 @@
   to {
     transform: rotate(360deg);
   }
+} */
+.Pokemon-Logo{
+  width: 200px;
+  height: 75px;
+}
+.Top-Bar{
+  padding: 10px;
+  background-color:#222823 ;
+  box-shadow: 2px 5px #575A5E;
+  display: flex;
+}
+.Title{
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #F4F7F5;
+}
+.Team{
+  padding-left: 25px;
+  background-color: #A7A2A9;
 }

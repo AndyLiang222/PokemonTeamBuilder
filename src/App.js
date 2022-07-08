@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import pokemonLogo from './images/Pokemon_Logo.png';
 import './App.css';
+import Team from './Team';
+import React, {useEffect, useState} from "react"
 
 function App() {
+  const [pokeData, setPokeData] = useState([])
+
+  const fetchData = () =>{
+    fetch("https://pokeapi.co/api/v2/pokemon/").then(response =>{
+      return response.json()
+    }).then(data =>{
+      setPokeData(data)
+    })
+    console.log(pokeData)
+  }
+  useEffect(() => {
+    fetchData()
+  },[])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className = "Top-Bar">
+          <img className = "Pokemon-Logo" src = {pokemonLogo}/>
+          <h1 className = "Title" >Team Builder</h1>
+        </div>
       </header>
+      <Team/>
     </div>
   );
 }
-
 export default App;
