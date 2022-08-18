@@ -45,6 +45,7 @@
   background-color:#222823 ;
   box-shadow: 2px 5px #575A5E;
   display: flex;
+
 }
 .Title{
   padding-left: 10px;
@@ -54,4 +55,21 @@
 .Team{
   padding-left: 25px;
   background-color: #A7A2A9;
+}
+.Button-Random{
+  
+  width: 100px;
+  height: 25px;
+
+}
+.Team-Main{
+  display: flex;
+
+}
+.Team-Name{
+  padding-left: 20px;
+  color: #F4F7F5;
+}
+.Pokemon{
+  padding: 25px;
 }

@@ -2,22 +2,23 @@ import pokemonLogo from './images/Pokemon_Logo.png';
 import './App.css';
 import Team from './Team';
 import React, {useEffect, useState} from "react"
+import useFetch from './useFetch';
 
 function App() {
-  const [pokeData, setPokeData] = useState([])
-
-  const fetchData = () =>{
-    fetch("https://pokeapi.co/api/v2/pokemon/").then(response =>{
-      return response.json()
-    }).then(data =>{
-      setPokeData(data)
-    })
-    console.log(pokeData)
+  const pokeData = useFetch("https://pokeapi.co/api/v2/pokemon/")
+  console.log(pokeData)
+  const [comp , setComp] = useState([0,0,0,0,0,0]);
+  function randInt(max, min){
+    return min + Math.floor(Math.random()*(max-min));
   }
-  useEffect(() => {
-    fetchData()
-  },[])
-
+  const randomTeam = () =>{
+    const temp = [];
+    for(let i = 0;i<6;i++){
+      temp.push(randInt(1, 155));
+    }
+    setComp(temp)
+  }
+  const teamComp = {name: "Test" , team: comp}
   return (
     <div className="App">
       <header className="App-header">
@@ -26,7 +27,8 @@ function App() {
           <h1 className = "Title" >Team Builder</h1>
         </div>
       </header>
-      <Team/>
+      <button className = "Button-Random" onClick={randomTeam}>Randomize</button>
+      <Team team = {teamComp}/>
     </div>
   );
 }
