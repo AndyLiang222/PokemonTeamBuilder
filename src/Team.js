@@ -4,10 +4,10 @@ import Pokemon from "./Pokemon.js"
 function Team(props){
     const{name, team} = props.team;
     console.log(team)
+    let count = 1;
     const teamComp = team.map(pokemon =>(
-
-       (pokemon == 0 ? <text>Nothing</text>:<Pokemon key ={pokemon} id = {pokemon}/>
-    )))
+       (pokemon != 0 && <Pokemon key ={count++} id = {pokemon}/>)
+    ))
     return(
         <div className='Team'>
             

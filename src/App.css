@@ -55,6 +55,7 @@
 .Team{
   padding-left: 25px;
   background-color: #A7A2A9;
+  height: 300px;
 }
 .Button-Random{
   
@@ -72,4 +73,6 @@
 }
 .Pokemon{
   padding: 25px;
+  display: flex;
+  flex-direction: column;
 }
