@@ -8,7 +8,13 @@ function Pokemon(props){
     if(error)console.log(error);
     let name = "temp";
     let imgUrl = "temp";
+    console.log(props.focused)
+    const styles = {
+        backgroundColor: props.focused?"#F4F7F5": "transparent",
+        height: 150,
+        width:150
 
+    }
     console.log(data + " " + props.id);
     if(data ){
         name = data.name;
@@ -16,13 +22,14 @@ function Pokemon(props){
         console.log(data.name);
     }
     return(
-        <div className='Pokemon'>
-            {loading && <text>Image Loading...</text>}
-            {!data && <img className='Poke-Sprite' src = {Default}></img>}
-            {data && <img className='Poke-Sprite' src={imgUrl} onClick = {props.clicked}/>}
-            {loading && <text>loading...</text>}
-            {data && <text>{name}</text>}
-
+        <div className='focusBox' style={styles}>
+            <div className='Pokemon'>
+                {loading && <text>Image Loading...</text>}
+                {!data && <img className='Poke-Sprite' src = {Default}></img>}
+                {data && <img className='Poke-Sprite' src={imgUrl} onClick = {props.clicked}/>}
+                {loading && <text>loading...</text>}
+                {data && <text>{name}</text>}
+            </div>
         </div>
     )
 }

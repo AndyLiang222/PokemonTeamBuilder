@@ -72,6 +72,16 @@
 .Options-Back{
   background-color: var(--Secondary-Color);
   height: 300px;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  padding-top: 30px;
+}
+.Options{
+  background-color: #575A5E;
+  width: 80vw;
+  height: 300px;
+
 }
 .Poke-Sprite:hover{
   animation: shake 0.5s;

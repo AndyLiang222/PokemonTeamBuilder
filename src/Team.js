@@ -2,11 +2,11 @@ import './App.css';
 import Pokemon from "./Pokemon.js"
 
 function Team(props){
-    const{name, team,toggleFocus} = props.team;
+    const{name, team,toggleFocus, focus} = props.team;
     console.log(team)
     let count = 0;
     const teamComp = team.map((pokemon,index) =>(
-       <Pokemon key ={count++} id = {pokemon} clicked = {() => toggleFocus(index)}/>
+       <Pokemon key ={count++} id = {pokemon} clicked = {() => toggleFocus(index)} focused= {index == focus}/>
     ))
     return(
         <div className='Team'>
