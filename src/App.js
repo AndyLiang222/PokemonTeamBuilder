@@ -8,6 +8,7 @@ function App() {
   const pokeData = useFetch("https://pokeapi.co/api/v2/pokemon/")
   console.log(pokeData)
   const [comp , setComp] = useState([0,0,0,0,0,0]);
+  const [focus, setFocus] = useState(3);
   function randInt(max, min){
     return min + Math.floor(Math.random()*(max-min));
   }
@@ -18,7 +19,19 @@ function App() {
     }
     setComp(temp)
   }
-  const teamComp = {name: "Test" , team: comp}
+  const deletePokemon = () =>{
+    if(focus != -1){
+      const up  = [...comp];
+      up.splice(focus, 1);
+      up.push(0);
+      setComp(up)
+      console.log(focus)
+    }
+  }
+  function toggleFocus (id){
+    setFocus(id);
+  }
+  const teamComp = {name: "Test" , team: comp, toggleFocus}
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +41,11 @@ function App() {
         </div>
       </header>
       <button className = "Button-Random" onClick={randomTeam}>Randomize</button>
+      <button className='Button-Delete' onClick={deletePokemon}>Delete</button>
       <Team team = {teamComp}/>
+      <div className='Options-Back'>
+
+      </div>
     </div>
   );
 }

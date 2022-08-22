@@ -1,6 +1,4 @@
 import {useState, useEffect} from "react"
-//Idk why useEffect isn't running even tho the dependency is url
-//I'm going to temporarly move the hooks to the components then fix once I figure out
 const useFetch = url =>{
     const [data, setData] = useState();
     const [error, setError] = useState();
@@ -13,6 +11,7 @@ const useFetch = url =>{
     }
     useEffect(() => {
         console.log("effect ran");
+        setData(undefined)
         setLoading(true);
         fetch(url)
             .then(response => response.json())
