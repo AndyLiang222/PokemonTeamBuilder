@@ -9,11 +9,7 @@ function Team(props){
        <Pokemon key ={count++} id = {pokemon} clicked = {() => toggleFocus(index)} focused= {index == focus}/>
     ))
     return(
-        <div className='Team'>
-            
-            <h1 className='Team-Title'>
-                Your Team
-            </h1>
+        <div className='Team-Container'>
             <h2 className='Team-Name'>
                 {name}
             </h2>
