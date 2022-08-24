@@ -51,12 +51,16 @@
 
 }
 .Team-Main{
-  display: flex;
+
   justify-content: center;
 }
 .Team-Name{
   padding-left: 20px;
   color: var(--Primary-Color);
+}
+.Team-Row{
+  display: flex;
+  justify-content: center;
 }
 .Pokemon{
   padding: 30px;
@@ -69,9 +73,10 @@
   width: 100px;
   height: 100px;
 }
+
 .Options-Back{
   background-color: var(--Secondary-Color);
-  height: 300px;
+  height: 500px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -82,8 +87,15 @@
 .Options{
   background-color: #575A5E;
   width: 80vw;
-  height: 300px;
+  height: 500px;
   padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Options-Content{
+  padding-top: 50px;
+  color: #F4F7F5;
 }
 .Poke-Sprite:hover{
   animation: shake 0.5s;
