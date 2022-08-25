@@ -5,22 +5,23 @@ import React, {useEffect, useState} from "react"
 import useFetch from './useFetch';
 
 function App() {
-  const loadLimit = 10;
+  const loadLimit = 20;
+  const loadMax = 500;
   const teamLen = 6;
   const optionLen = 5;
   const pokeData = useFetch("https://pokeapi.co/api/v2/pokemon/")
   
   const [comp , setComp] = useState([0,0,0,0,0,0]);
   const [focus, setFocus] = useState(-1);
-  const [options, setOptions] = useState([1,2,3,4,5,6,7,8,9,10]);
-  console.log(comp)
+  const [options, setOptions] = useState([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]);
+  console.log(options)
   function randInt(max, min){
     return min + Math.floor(Math.random()*(max-min));
   }
   const randomTeam = () =>{
     const temp = [];
     for(let i = 0;i<6;i++){
-      temp.push(randInt(1, 155));
+      temp.push(randInt(1, loadMax));
     }
     setComp(temp)
     setFocus(-1)
@@ -36,11 +37,13 @@ function App() {
     }
   }
   function changeOptions(dir){
-    setOptions((previous) => {
-      previous.map((value)=>{
-        return value+dir*loadLimit;
-      })
-    })
+    if(options[0]+dir*loadLimit<=0)return;
+    if(options[loadLimit-1]+dir*loadLimit >= loadMax)return;
+    let temp = options.map((value)=>{
+      return value+dir*loadLimit;
+    });
+    setOptions(temp);
+    
   }
   function setPokemon(index,pokemon){
     let idx = comp.indexOf(0);
@@ -68,19 +71,27 @@ function App() {
           <h1 className = "Title" >Team Builder</h1>
         </div>
       </header>
-      <button className = "Button-Random" onClick={randomTeam}>Randomize</button>
-      <button className='Button-Delete' onClick={deletePokemon}>Delete</button>
-      <button className='Button-Unselect' onClick={() => toggleFocus(-1,0)}>Un-focus</button>
+      <div className='Action-Bar'>
+        <a className = "Button-Random" onClick={randomTeam}>Randomize</a>
+        <a className='Button-Delete' onClick={deletePokemon}>Delete</a>
+        <a className='Button-Unselect' onClick={() => toggleFocus(-1,0)}>Un-focus</a>
+      </div>
       <div className='Team'>
         <h1 className='Team-Title'>Your Team</h1>
         <Team team = {teamComp}/>
       </div>
       <div className='Options-Back'>
           <div className='Options'>
-            <h1 className='Options-Header'>Pokemon</h1>
-              <div className='Options-Content'>
-                <Team team = {optionComp}/>
+            <div className='Options-Header'>
+              <h1 className='Options-Title'>Pokemon</h1>
+              <div className='Options-Buttons'>
+                <a onClick={() => changeOptions(-1)}>Previous</a>
+                <a onClick={() => changeOptions(1)}>Next</a>
               </div>
+            </div>
+            <div className='Options-Content'>
+              <Team team = {optionComp}/>
+            </div>
           </div>
       </div>
     </div>

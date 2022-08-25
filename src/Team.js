@@ -8,12 +8,13 @@ function Team(props){
     
 
     
-    const teamComp = team.map((pokemon,index) =>(
-       <Pokemon key ={count++} id = {pokemon} clicked = {() => onClick(index,pokemon)} focused= {index == focus}/>
-    ))
+    // const teamComp = team.map((pokemon,index) =>(
+    //    <Pokemon key ={count++} id = {pokemon} clicked = {() => onClick(index,pokemon)} focused= {index == focus}/>
+    // ))
     function getTeam (team){
+
         let temp = [];
-        console.log(team.length + " " + teamLen)
+        console.log(team)
         for(let i = 0;i<=team.length/teamLen;i++){
             let t = [];
             for(let j = 0;j< teamLen;j++){
