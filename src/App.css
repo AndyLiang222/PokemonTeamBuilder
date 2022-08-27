@@ -90,7 +90,7 @@
 }
 
 .Options{
-  background-color: #575A5E;
+  background-color: var(--shadow);
   width: 80vw;
   height: 725px;
   padding-left: 30px;
@@ -149,7 +149,97 @@
   top: 5px;
   left: 5px;
 }
+.Info{
+  padding-left: 50px;
+  margin: 30px;
+}
+.Info-Img{
+  height: 300px;
+  width: 300px;
+}
+.Upper-Info{
+  display: flex;
+}
+.Lower-Info{
+  display: flex;
+}
+.Basic-Info{
+  padding-left: 50px;
+}
+.Info-Types{
+  display:flex;
+}
+.Info-Moves{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
 
+}
+.Moves{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  overflow-y: auto;
+  background-color: var(--Secondary-bg);
+}
+.Info-Exit{
+  width: 200px;
+  text-align: right;
+}
+.Exit-Button{
+  
+  height: 50px;
+  width: 50px;
+}
+.Type-Img{
+  width: 60px;
+  height:20px;
+  padding-right: 20px;
+}
+.Info-Stats{
+  width: 300px;
+  background-color: var(--Secondary-bg);
+  padding: 25px;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+.Stat{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  text-align: center;
+}
+.Info-Advantages{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.Type-Advantage{
+  display: flex;
+}
+/* .Stat-Text{
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+} */
+/* .Stat div{
+  margin: 5px;
+  width: 25px;
+  height: 10px;
+} */
+.Stat text{
+  font-size: 1;
+}
+.Info-PokeStats{
+  display: flex;
+}
+.Info-Stats text{
+  margin-right: 20px;
+  margin-top: 50px;
+}
 @media (min-width: 768px) {
   .App a{
     padding: 0.25em 0.75em;

@@ -1,6 +1,7 @@
 import pokemonLogo from './images/Pokemon_Logo.png';
 import './App.css';
 import Team from './Team';
+import Info from './Info';
 import React, {useEffect, useState} from "react"
 import useFetch from './useFetch';
 
@@ -14,6 +15,7 @@ function App() {
   const [comp , setComp] = useState([0,0,0,0,0,0]);
   const [focus, setFocus] = useState(-1);
   const [options, setOptions] = useState([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]);
+  const [showInfo, setShow] = useState(false);
   console.log(options)
   function randInt(max, min){
     return min + Math.floor(Math.random()*(max-min));
@@ -34,6 +36,7 @@ function App() {
       setComp(up)
       console.log(focus)
       setFocus(-1);
+      setShow(false);
     }
   }
   function changeOptions(dir){
@@ -54,15 +57,23 @@ function App() {
     }else{
       if(idx != -1){
         temp[idx] = pokemon;
+        setFocus(idx);
       }
     }
     setComp(temp);
+    setShow(true);
+  }
+  function closeInfo(){
+    setFocus(-1);
+    setShow(false);
   }
   function toggleFocus (index,pokemon){
     setFocus(index);
+    setShow((index != -1));
   }
   const teamComp = {name: "Test" , team: comp, onClick:toggleFocus, focus: focus,teamLen: teamLen}
   const optionComp = {name:"", team:options, onClick: setPokemon, focus:-1, teamLen: optionLen}
+  const pData = {id : comp[focus],close: closeInfo}
   return (
     <div className="App">
       <header className="App-header">
@@ -82,16 +93,23 @@ function App() {
       </div>
       <div className='Options-Back'>
           <div className='Options'>
-            <div className='Options-Header'>
-              <h1 className='Options-Title'>Pokemon</h1>
-              <div className='Options-Buttons'>
-                <a onClick={() => changeOptions(-1)}>Previous</a>
-                <a onClick={() => changeOptions(1)}>Next</a>
+            {(!showInfo && <div className = 'Selection-Wrapper'>
+              <div className='Options-Header'>
+                <h1 className='Options-Title'>Pokemon</h1>
+                <div className='Options-Buttons'>
+                  <a onClick={() => changeOptions(-1)}>Previous</a>
+                  <a onClick={() => changeOptions(1)}>Next</a>
+                </div>
               </div>
-            </div>
-            <div className='Options-Content'>
-              <Team team = {optionComp}/>
-            </div>
+              <div className='Options-Content'>
+                <Team team = {optionComp}/>
+              </div>
+            </div>)}
+            {(showInfo) && 
+            <div className='Info-Wrapper'>
+              <Info data = {pData}></Info>
+            </div>  
+            }
           </div>
       </div>
     </div>
