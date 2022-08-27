@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/First-Web/static/css/main.39a97395.css",
+    "main.js": "/First-Web/static/js/main.01127a9b.js",
+    "static/media/Pokemon_Logo.png": "/First-Web/static/media/Pokemon_Logo.5511e54e001107cf3e5a.png",
+    "static/media/default.png": "/First-Web/static/media/default.181fec41efb36cf4feb0.png",
+    "static/media/Exit.png": "/First-Web/static/media/Exit.a9edb4f0cb0d9ff8d85e.png",
+    "static/media/ground.png": "/First-Web/static/media/ground.6ca642ec574258713fd1.png",
+    "static/media/dragon.png": "/First-Web/static/media/dragon.67925b20248a86eed04b.png",
+    "static/media/grass.png": "/First-Web/static/media/grass.600d04fcf1200c53c099.png",
+    "static/media/physical.png": "/First-Web/static/media/physical.4dc7491123cdbc1d03e5.png",
+    "static/media/poison.png": "/First-Web/static/media/poison.53660d010f9ee3408885.png",
+    "static/media/psychic.png": "/First-Web/static/media/psychic.75fa6c8e168c1db0673a.png",
+    "static/media/normal.png": "/First-Web/static/media/normal.e8b561a065d905c7af39.png",
+    "static/media/special.png": "/First-Web/static/media/special.54807b72f369e7889d40.png",
+    "static/media/ghost.png": "/First-Web/static/media/ghost.3010e7c9f00345992175.png",
+    "static/media/water.png": "/First-Web/static/media/water.911f680d19e460bed00b.png",
+    "static/media/fighting.png": "/First-Web/static/media/fighting.3d7fb952d3ee8446537f.png",
+    "static/media/rock.png": "/First-Web/static/media/rock.0bb4f2a6695f829954b2.png",
+    "static/media/electric.png": "/First-Web/static/media/electric.3c39650ca6c37a02288b.png",
+    "static/media/status.png": "/First-Web/static/media/status.b1e64ee633027dafd982.png",
+    "index.html": "/First-Web/index.html",
+    "main.39a97395.css.map": "/First-Web/static/css/main.39a97395.css.map",
+    "main.01127a9b.js.map": "/First-Web/static/js/main.01127a9b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39a97395.css",
+    "static/js/main.01127a9b.js"
+  ]
+}
