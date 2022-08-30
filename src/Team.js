@@ -3,6 +3,7 @@ import Pokemon from "./Pokemon.js"
 
 function Team(props){
     const{name, team,onClick, focus,teamLen} = props.team;
+    //const name = props.team.name;
     console.log(team)
     let count = 0;
     
