@@ -1,7 +1,7 @@
 {
   "name": "test",
   "version": "0.1.0",
-  "homepage": "https://AndyLiang222.github.io/First-Web",
+  "homepage": "https://andyliang222.github.io/First-Web",
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
